@@ -15,7 +15,20 @@
   margin: 24px 24px 24px 0;
   padding: 24px;
   border-radius: 8px;
-
+  position: relative;
+}
+.player__delerte-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 100;
 }
 
 .players__container {
@@ -32,10 +45,21 @@
   background-color: #575656;
   color: #fff;
   font-size: 20px;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
 .btn:hover {
   transform: scale(1.1);
+}
+
+.player__avatar {
+  display: block;
+}
+
+.player__avatar img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  padding: -24px;
 }
