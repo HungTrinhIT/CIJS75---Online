@@ -21,13 +21,9 @@ export default Player;
 
 /*
     Remove Player from UI
-
-    UI
-        - Create UI
-        - Remove Player component from Component Tree
-
-    Logic
-        - Find index player that we want to remove
-        - Create new state without 
-        - Set new state
+    CRUD:
+      C - Create => create new player
+      R - Read  => Read player information
+      U - Updating => Updating information of player
+      D - Delete => Delete player form players list
 */

@@ -1,8 +1,6 @@
 .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .player__wrapper {
@@ -11,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 250px;
   margin: 24px 24px 24px 0;
   padding: 24px;
   border-radius: 8px;
@@ -19,12 +17,15 @@
 }
 .player__delerte-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: -10px;
+  right: -10px;
   height: 18px;
   width: 18px;
   line-height: 18px;
   border: 1px solid black;
+  background: black;
+  color: #fff;
+  font-weight: bold;
   text-align: center;
   cursor: pointer;
   border-radius: 50%;
@@ -47,6 +48,7 @@
   font-size: 20px;
   transition: all 0.3s;
   cursor: pointer;
+  margin-right: 16px;
 }
 
 .btn:hover {
@@ -62,4 +64,44 @@
   height: 100%;
   width: 100%;
   padding: -24px;
+}
+.form-container {
+  padding: 16px 0;
+  margin: 16px 0;
+  border-bottom: 1px solid black;
+}
+.form-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+.form-container .form-control {
+  width: calc(50% - 24px);
+  display: inline-block;
+}
+.form-control label {
+  margin-bottom: 10px;
+  display: block;
+}
+.form-control input {
+  width: 90%;
+  display: block;
+  padding: 8px 16px;
+}
+.submit-btn {
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: #fff;
+  color: black;
+  padding: 8px 16px;
+  font-size: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  color: white;
+  background: black;
 }

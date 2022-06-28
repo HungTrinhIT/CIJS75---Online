@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AddPlayer from "./components/AddPlayer";
 import Player from "./components/Player";
 
 const VALID_NUMBER_PLAYER = 5;
@@ -38,18 +39,15 @@ const initialState = [
   },
 ];
 function App() {
-  const [players, setPlayers] = useState(initialState);
+  const [players, setPlayers] = useState([]);
 
-  const onAddPlayerHandler = () => {
-    const newPlayer = {
-      name: "Harry Macguire",
-      position: "Captain -  Rap xiec",
-      age: 30,
-      rate: 1,
+  const onAddPlayerHandler = (playerInfo) => {
+    playerInfo = {
+      ...playerInfo,
       id: players.length + 1,
       avatar: "images/ronaldo.jpeg",
     };
-    const newState = [...players, newPlayer];
+    const newState = [...players, playerInfo];
     setPlayers(newState);
   };
 
@@ -87,6 +85,9 @@ function App() {
       >
         Filter player
       </button>
+
+      {/* Form */}
+      <AddPlayer onAddPlayer={onAddPlayerHandler} />
       <div className="players__container">{playList}</div>
     </div>
   );
