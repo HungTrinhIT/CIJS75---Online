@@ -1,0 +1,25 @@
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  padding: 28px;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 500px;
+  width: 400px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-control input{
+  padding: 8px;
+  width: 100%;
+}
