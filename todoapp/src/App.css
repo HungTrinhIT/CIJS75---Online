@@ -1,0 +1,51 @@
+.todo-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.todo-container {
+  padding: 32px;
+  border-radius: 8px;
+  background: #d6d6d6;
+  height: 600px;
+  width: 50vw;
+  overflow: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #db87879e;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.todo-delete {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  background-color: aqua;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.todo-delete:hover {
+  transform: scale(1.1);
+}
+
+.form-container {
+  margin-bottom: 28px;
+}
+.form-container input {
+  padding: 8px 10px;
+  width: 70%;
+  margin-right: 10px;
+}
+.form-container button {
+  padding: 8px 10px;
+}
+
