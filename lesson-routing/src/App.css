@@ -1,0 +1,23 @@
+header {
+  padding: 16px 24px;
+  background: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+}
+header ul li {
+  margin-right: 16px;
+}
+header ul li:last-child {
+  margin-right: 0;
+}
+
+header ul li a {
+  color: #fff;
+}
