@@ -6,8 +6,10 @@ const TodoList = (props) => {
 
   return (
     <div className="todo-list">
-      {data.map((todo, index) => {
-        return <TodoItem todo={todo} key={index} onDeleteTodo={onDeleteTodo} />;
+      {data.map((todo) => {
+        return (
+          <TodoItem todo={todo} key={todo.id} onDeleteTodo={onDeleteTodo} />
+        );
       })}
     </div>
   );

@@ -1,30 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
+import SearchTodo from "./components/SearchTodo";
 import TodoList from "./components/TodoList";
 
-const initialState = [
-  {
-    id: 1,
-    title: "CIJS 75",
-    isCompleted: true,
-  },
-  {
-    id: 2,
-    title: "Di choi voi Gau",
-    isCompleted: false,
-  },
-  {
-    id: 3,
-    title: "Di ve nha",
-    isCompleted: false,
-  },
-  {
-    id: 4,
-    title: "Di ngu",
-    isCompleted: false,
-  },
-];
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -32,7 +12,7 @@ function App() {
     const newTodo = {
       title: todoValue,
       isCompleted: false,
-      id: todos.length + 1,
+      id: uuidv4(),
     };
 
     const newTodoList = [...todos, newTodo];
@@ -48,12 +28,15 @@ function App() {
     setTodos(newTodoList);
   };
 
+  const onCompleteTodo = (id) => {};
+
   return (
     <div className="todo-wrapper">
       <div className="todo-container">
         <h1>Todo Application</h1>
-        <AddTodo onAddTodo={onAddTodo} />
+        <SearchTodo />
         <TodoList data={todos} onDeleteTodo={onDeleteTodo} />
+        <AddTodo onAddTodo={onAddTodo} />
       </div>
     </div>
   );
