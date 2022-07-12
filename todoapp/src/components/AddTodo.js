@@ -1,28 +1,51 @@
 import React, { useState } from "react";
 
 // Controlled form
+/*
+  {
+    id: uuidv4(),
+    title: "",
+    deadline: new Date()
+  }
+*/
+const initialState = {
+  title: "",
+  deadline: null,
+};
+
 const AddTodo = (props) => {
-  const [todoValue, setTodoValue] = useState("");
+  const [todoValue, setTodoValue] = useState(initialState);
 
   const onChangeHandler = (event) => {
-    setTodoValue(event.target.value);
+    const { name, value } = event.target;
+    setTodoValue({
+      ...todoValue,
+      [name]: value,
+    });
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     props.onAddTodo(todoValue);
-
-    //Clear input value after submiting
-    setTodoValue("");
+    setTodoValue(initialState);
   };
   return (
     <div className="form-container">
       <form onSubmit={onSubmitHandler}>
         <input
-          id="todoValue"
-          name="todoValue"
-          value={todoValue}
+          id="title"
+          name="title"
+          value={todoValue.title}
           onChange={onChangeHandler}
+          required
+        />
+        <input
+          id="deadline"
+          name="deadline"
+          type="date"
+          value={todoValue.deadline}
+          onChange={onChangeHandler}
+          required
         />
         <button type="submit">Add</button>
       </form>

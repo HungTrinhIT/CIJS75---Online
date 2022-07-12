@@ -2,17 +2,18 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
-import SearchTodo from "./components/SearchTodo";
 import TodoList from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   const onAddTodo = (todoValue) => {
+    const { title, deadline } = todoValue;
     const newTodo = {
-      title: todoValue,
+      title,
       isCompleted: false,
       id: uuidv4(),
+      deadline,
     };
 
     const newTodoList = [...todos, newTodo];
@@ -28,15 +29,13 @@ function App() {
     setTodos(newTodoList);
   };
 
-  const onCompleteTodo = (id) => {};
-
   return (
     <div className="todo-wrapper">
       <div className="todo-container">
         <h1>Todo Application</h1>
-        <SearchTodo />
-        <TodoList data={todos} onDeleteTodo={onDeleteTodo} />
+        {/* <SearchTodo /> */}
         <AddTodo onAddTodo={onAddTodo} />
+        <TodoList data={todos} onDeleteTodo={onDeleteTodo} />
       </div>
     </div>
   );
