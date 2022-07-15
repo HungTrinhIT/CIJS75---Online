@@ -7,6 +7,10 @@ const SearchUserForm = (props) => {
     setSearchValue(e.target.value);
   };
 
+  const onClearSearchValue = () => {
+    setSearchValue("");
+  };
+  
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     // Goi API den Github => response list users
@@ -16,7 +20,9 @@ const SearchUserForm = (props) => {
     );
     const searchData = searchResponse.data.items;
     props.onSearchUser(searchData);
+    onClearSearchValue();
   };
+
   return (
     <div className="form-wrapper">
       <form onSubmit={onSubmitHandler}>
@@ -24,8 +30,19 @@ const SearchUserForm = (props) => {
           name="searchValue"
           value={searchValue}
           onChange={onChangeHandler}
+          className="search-input"
+          placeholder="Search user"
         />
-        <button type="submit">Search</button>
+        <button
+          type="button"
+          className="submit-btn"
+          onClick={onClearSearchValue}
+        >
+          Clear
+        </button>
+        <button className="submit-btn" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );

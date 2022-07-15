@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <SearchUserForm onSearchUser={onSearchUser} />
       <UserList userListData={users} />
     </div>
